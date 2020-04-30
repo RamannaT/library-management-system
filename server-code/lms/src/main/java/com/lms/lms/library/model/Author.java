@@ -7,22 +7,22 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "LIBRARY")
-public class Library {
+@Table(name = "AUTHOR")
+public class Author {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String name;
-	private String address;
+	private String description;
 
-	public Library() {
+	public Author() {
 	}
 
-	public Library(String name, String address) {
+	public Author(String name, String description) {
 		super();
 		this.name = name;
-		this.address = address;
+		this.description = description;
 	}
 
 	public long getId() {
@@ -41,17 +41,12 @@ public class Library {
 		this.name = name;
 	}
 
-	public String getAddress() {
-		return address;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	@Override
-	public String toString() {
-		return "Library [id=" + id + ", name=" + name + ", address=" + address + "]";
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 }
