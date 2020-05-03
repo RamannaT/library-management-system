@@ -25,18 +25,13 @@ public class BookRepositoryImpl {
 		bookRepository.save(book);
 	}
 
-	public Book updateBook(Book book, long id) {
-		
-		System.out.println("start DAO update"+ book +"id "+id);
+	public Book updateBook(Book book, long id) {		
 		Book updateBook = getBookById(id);
-		System.out.println("Inside DAO update"+ updateBook);		
 		updateBook.setTitle(book.getTitle());
 		updateBook.setISBN(book.getISBN());
 		updateBook.setSubject(book.getSubject()); 
 		updateBook.setPublisher(book.getPublisher());
 		bookRepository.save(updateBook);
-
-		System.out.println("End DAO update"+ book +"id "+id);
 		return updateBook;
 	}
 

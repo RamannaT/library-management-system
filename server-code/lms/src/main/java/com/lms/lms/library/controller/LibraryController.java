@@ -3,7 +3,10 @@ package com.lms.lms.library.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,24 +18,31 @@ public class LibraryController {
 
 	@Autowired(required = true)
 	LibraryServiceImpl libraryService;
+	
+	public LibraryController() {}
 
+	@PostMapping("/library/create")
 	public void insertLibrary(@RequestBody Library library) {
 		libraryService.insertLibrary(library);
 	}
 
-	public Library updateibrary(@RequestBody Library library, @PathVariable Long id) {
-		Library updatedLibrary = libraryService.updateLibrary(library, id);
+	@PutMapping("/library/update/libraryId/{libraryId}")
+	public Library updateibrary(@RequestBody Library library, @PathVariable Long libraryId) {
+		Library updatedLibrary = libraryService.updateLibrary(library, libraryId);
 		return updatedLibrary;
 	}
 
-	public Library getById(@PathVariable Long id) {
-		Library library = libraryService.getById(id);
+	@GetMapping("/library/libraryId/{libraryId}")
+	public Library getById(@PathVariable Long libraryId) {
+		Library library = libraryService.getById(libraryId);
 		return library;
 	}
 
+	@GetMapping("/library/getAll") 
 	public List<Library> getAll() {
 		List<Library> libraryList = libraryService.getAll();
 		return libraryList;
 	}
+	 
 
 }

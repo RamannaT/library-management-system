@@ -17,12 +17,7 @@ public class Book {
 	private String ISBN;
 	private String title;
 	private String subject;
-	private String publisher;
-//	private String language;
-//	private String numberOfPages;
-//	@OneToOne
-//	private Author authors;
-
+	private String publisher; 
 	public Book() {
 	}
 
@@ -32,9 +27,6 @@ public class Book {
 		this.title = title;
 		this.subject = subject;
 		this.publisher = publisher;
-//		this.language = language;
-//		this.numberOfPages = numberOfPages;
-		// this.authors = authors;
 	}
 
 	public long getId() {
@@ -75,37 +67,12 @@ public class Book {
 
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
-	}
-//
-//	public String getLanguage() {
-//		return language;
-//	}
-//
-//	public void setLanguage(String language) {
-//		this.language = language;
-//	}
-//
-//	public String getNumberOfPages() {
-//		return numberOfPages;
-//	}
-//
-//	public void setNumberOfPages(String numberOfPages) {
-//		this.numberOfPages = numberOfPages;
-//	}
-
-//	public Author getAuthors() {
-//		return authors;
-//	}
-//
-//	public void setAuthors(Author authors) {
-//		this.authors = authors;
-//	}
-
+	} 
 	@Override
 	public String toString() {
-		return "Book [id=" + id + ", ISBN=" + ISBN + ", title=" + title + ", subject=" + subject + ", publisher=" + publisher + ""
-//				+ ", language=" + language + ", numberOfPages=" + numberOfPages + ", "	+ "authors=" + authors
-				+ "]";
+		return "Book [id=" + id + ", ISBN=" + ISBN + ", "
+				+ "title=" + title + ", subject=" + subject + ", "
+				+ "publisher=" + publisher + "" + "]";
 	}
 
 }
