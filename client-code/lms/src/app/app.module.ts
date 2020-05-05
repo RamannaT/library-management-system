@@ -9,7 +9,10 @@ import { BooksComponent } from './components/books/books.component';
 import { HomeComponent } from './components/home/home.component';
 
 import {HttpClientModule} from '@angular/common/http'
-import {FormsModule, ReactiveFormsModule} from '@angular/forms'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { RegisterComponent } from './components/register/register.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { DetailComponent } from './components/detail/detail.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms'
     LoginComponent,
     LibraryComponent,
     BooksComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent,
+    ProfileComponent,
+    DetailComponent
 
   ],
   imports: [
